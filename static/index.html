@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clarity / Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#172121; --muted:#718080; --paper:#f7f5ef; --card:#fffdf8; --mint:#bfe6d1; --orange:#ff795d; --line:#dce1da; --shadow:0 24px 70px rgba(35,48,43,.12); }
+    * { box-sizing:border-box; } body { margin:0; min-height:100vh; color:var(--ink); background:var(--paper); font-family:"Space Grotesk",sans-serif; }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.38; background-image:radial-gradient(#c8d4ca 1px,transparent 1px); background-size:23px 23px; mask-image:linear-gradient(to bottom right,#000,transparent 70%); }
+    .shell { position:relative; display:grid; grid-template-columns:280px minmax(0,760px); gap:34px; width:min(1100px,calc(100% - 48px)); min-height:100vh; margin:auto; padding:44px 0; }
+    .rail { display:flex; flex-direction:column; justify-content:space-between; padding:4px 0 8px; } .mark { display:flex; align-items:center; gap:11px; font-weight:700; letter-spacing:-.03em; font-size:20px; }
+    .mark-dot { width:17px; height:17px; border-radius:50%; background:var(--orange); box-shadow:8px 4px 0 var(--mint); } .rail-copy { margin-top:88px; }
+    .eyebrow { color:var(--orange); font:500 11px "DM Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { max-width:250px; margin:14px 0 18px; font-size:43px; line-height:1.03; letter-spacing:-.06em; } .rail-copy p { max-width:220px; color:var(--muted); font-size:14px; line-height:1.65; }
+    .rail-foot { color:var(--muted); font:11px "DM Mono",monospace; line-height:1.7; } .workspace { display:flex; flex-direction:column; justify-content:center; min-width:0; }
+    .topline { display:flex; align-items:center; justify-content:space-between; margin-bottom:15px; font:11px "DM Mono",monospace; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+    .progress-track { height:5px; overflow:hidden; background:#e3e7e0; border-radius:99px; } .progress-bar { width:0%; height:100%; background:var(--orange); transition:width .45s ease; }
+    .chat { height:min(52vh,520px); min-height:280px; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; scroll-behavior:smooth; margin-top:18px; padding:22px 26px 8px; border:1px solid var(--line); border-radius:4px; background:rgba(255,253,248,.88); box-shadow:var(--shadow); }
+    .chat::-webkit-scrollbar { width:8px; } .chat::-webkit-scrollbar-track { background:transparent; } .chat::-webkit-scrollbar-thumb { border:2px solid transparent; border-radius:99px; background:var(--line); background-clip:padding-box; }
+    .message { display:flex; gap:12px; margin:0 0 24px; scroll-margin-bottom:150px; animation:rise .35s ease both; } .message.user { flex-direction:row-reverse; }
+    .avatar { flex:none; display:grid; place-items:center; width:28px; height:28px; border-radius:50%; color:#fff; background:var(--ink); font:11px "DM Mono",monospace; } .user .avatar { color:var(--ink); background:var(--mint); }
+    .bubble { max-width:78%; padding:12px 15px; border-radius:2px 13px 13px 13px; background:#eff3ed; font-size:15px; line-height:1.5; } .user .bubble { border-radius:13px 2px 13px 13px; background:var(--ink); color:#fff; }
+    .composer { position:sticky; bottom:18px; z-index:3; margin-top:17px; padding:18px; border:1px solid var(--line); background:rgba(255,253,248,.97); box-shadow:0 12px 30px rgba(35,48,43,.1); } .question-label { margin-bottom:13px; color:var(--muted); font:11px "DM Mono",monospace; text-transform:uppercase; letter-spacing:.07em; }
+    .options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; } button, input { font:inherit; }
+    .option { min-height:38px; padding:7px 10px; border:1px solid var(--line); border-radius:2px; background:transparent; color:var(--ink); text-align:left; cursor:pointer; font-size:13px; line-height:1.2; transition:.18s ease; }
+    .option:hover, .option.selected { border-color:var(--ink); background:var(--mint); transform:translateY(-1px); } .text-row { display:flex; gap:9px; }
+    input[type=text], input[type=number], input[type=date] { width:100%; min-height:46px; padding:0 13px; border:1px solid var(--line); border-radius:2px; outline:none; background:#fff; color:var(--ink); } input:focus { border-color:var(--ink); box-shadow:0 0 0 3px rgba(191,230,209,.65); }
+    .continue, .reset { border:0; border-radius:2px; cursor:pointer; font-weight:600; } .continue { min-width:110px; padding:0 17px; background:var(--orange); color:#fff; } .continue:hover { background:#e96248; }
+    .reset { padding:10px 13px; background:transparent; color:var(--muted); font-size:12px; } .reset:hover { color:var(--ink); } .error { margin-top:10px; color:#b54432; font-size:13px; }
+    .result { margin-top:17px; padding:22px; border-left:4px solid var(--orange); background:var(--mint); animation:rise .4s ease both; } .result small { display:block; margin-bottom:8px; color:#4d6b5b; font:11px "DM Mono",monospace; text-transform:uppercase; } .result strong { display:block; font-size:28px; letter-spacing:-.04em; } .result p { margin:8px 0 0; color:#3f5d4d; font-size:14px; line-height:1.5; }
+    .hidden { display:none; } @keyframes rise { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+    @media (max-width:760px) { .shell { display:block; width:min(100% - 28px,620px); padding:25px 0 35px; } .rail { display:block; } .rail-copy { margin-top:38px; } h1 { max-width:none; margin:10px 0; font-size:36px; } .rail-copy p, .rail-foot { display:none; } .workspace { margin-top:28px; } .chat { height:min(46vh,420px); min-height:190px; padding:18px 14px 4px; } .bubble { max-width:88%; } .options { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:420px) { .shell { width:calc(100% - 20px); } .composer { padding:13px; } .option { min-height:35px; padding:6px 8px; font-size:12px; } .options { gap:5px; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <aside class="rail"><div><div class="mark"><span class="mark-dot"></span>clarity / health</div><div class="rail-copy"><div class="eyebrow">underwriting intake</div><h1>A clearer way to check in.</h1><p>Your answers move the conversation forward. Nothing is inferred; every outcome follows the questionnaire rules.</p></div></div><div class="rail-foot">DETERMINISTIC FLOW<br>VERSION 1.0</div></aside>
+    <section class="workspace" aria-label="Health questionnaire"><div class="topline"><span id="progressText">starting session</span><button class="reset" id="resetButton">Start over</button></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div><div class="chat" id="chat" aria-live="polite"></div><div class="composer" id="composer"></div><div class="error hidden" id="error"></div><div class="result hidden" id="result"><small>deterministic outcome</small><strong id="outcome"></strong><p id="reason"></p></div></section>
+  </main>
+  <script>
+    let session = null, selected = [];
+    const $ = (id) => document.getElementById(id);
+    const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[c]));
+    async function request(url, options = {}) { const response = await fetch(url, {headers:{"Content-Type":"application/json"}, ...options}); const data = await response.json(); if (!response.ok) throw new Error(data.detail || "Something went wrong."); return data; }
+    function renderMessages() { $("chat").innerHTML = session.messages.map((m) => `<div class="message ${m.role}"><div class="avatar">${m.role === "user" ? "YOU" : "AI"}</div><div class="bubble">${escapeHtml(m.content)}</div></div>`).join(""); requestAnimationFrame(() => $("chat").lastElementChild?.scrollIntoView({behavior:"smooth", block:"end"})); }
+    function renderProgress() { const percent = Math.round(session.answered / session.total * 100); $("progressText").textContent = `${String(session.answered).padStart(2,"0")} / ${session.total} answered`; $("progressBar").style.width = `${percent}%`; }
+    function renderComposer() {
+      selected = []; const q = session.question; if (!q) { $("composer").classList.add("hidden"); return; } $("composer").classList.remove("hidden");
+      const label = `<div class="question-label">reply to continue · ${q.type}</div>`;
+      if (["select","boolean"].includes(q.type)) { const options = q.type === "boolean" ? ["Yes","No"] : q.options; $("composer").innerHTML = label + `<div class="options">${options.map((o) => `<button class="option" data-value="${escapeHtml(o)}">${escapeHtml(o)}</button>`).join("")}</div>`; document.querySelectorAll(".option").forEach((b) => b.addEventListener("click", () => submit(b.dataset.value))); return; }
+      if (q.type === "multiselect") { $("composer").innerHTML = label + `<div class="options">${q.options.map((o) => `<button class="option" data-value="${escapeHtml(o)}">${escapeHtml(o)}</button>`).join("")}</div><button class="continue" id="multiContinue" disabled style="margin-top:12px;height:44px">Continue</button>`; document.querySelectorAll(".option").forEach((b) => b.addEventListener("click", () => { const v = b.dataset.value; selected = selected.includes(v) ? selected.filter((x) => x !== v) : v === "None" ? ["None"] : [...selected.filter((x) => x !== "None"),v]; document.querySelectorAll(".option").forEach((x) => x.classList.toggle("selected", selected.includes(x.dataset.value))); $("multiContinue").disabled = !selected.length; })); $("multiContinue").addEventListener("click", () => submit(selected)); return; }
+      const type = q.type === "date" ? "date" : q.type === "number" || q.type === "decimal" ? "number" : "text", step = q.type === "decimal" ? " step=\"0.01\"" : q.type === "number" ? " step=\"1\"" : "";
+      $("composer").innerHTML = label + `<div class="text-row"><input id="answerInput" type="${type}"${step} autocomplete="off"><button class="continue">Send</button></div>`; $("composer").querySelector(".continue").addEventListener("click", () => submit($("answerInput").value)); $("answerInput").addEventListener("keydown", (e) => { if (e.key === "Enter") submit(e.target.value); }); $("answerInput").focus();
+    }
+    async function submit(value) { $("error").classList.add("hidden"); const sentValue = session.question.type === "boolean" ? value === "Yes" : value; try { session = await request(`/api/sessions/${session.session_id}/answers`, {method:"POST", body:JSON.stringify({question_id:session.question.id, value:sentValue})}); render(); } catch (error) { $("error").textContent = error.message; $("error").classList.remove("hidden"); } }
+    function render() { renderMessages(); renderProgress(); renderComposer(); if (session.complete) { $("outcome").textContent = session.outcome; $("reason").textContent = session.reason; $("result").classList.remove("hidden"); } else $("result").classList.add("hidden"); }
+    $("resetButton").addEventListener("click", async () => { session = await request(`/api/sessions/${session.session_id}/reset`, {method:"POST"}); render(); });
+    (async function start() { try { session = await request("/api/sessions", {method:"POST"}); render(); } catch (error) { $("error").textContent = error.message; $("error").classList.remove("hidden"); } })();
+  </script>
+</body>
+</html>
