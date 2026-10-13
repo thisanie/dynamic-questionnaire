@@ -462,5 +462,39 @@
         "reason": "The declared diabetes condition did not meet every STP criterion."
       }
     }
+  },
+  {
+    "product": "Health Guard",
+    "sum_assured": 100000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "aniket",
+        "gender": "Male",
+        "dob": "2000-02-02",
+        "member_id": "tkOXvJvG1Ys",
+        "age": 26
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "KPS7jqBKc4C9yDts",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Fresh start. I will guide you through a short health questionnaire."
+      },
+      {
+        "role": "assistant",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "Now answering for aniket (Self)."
+      }
+    ],
+    "member_answers": {
+      "tkOXvJvG1Ys": {}
+    },
+    "member_results": {}
   }
 ]

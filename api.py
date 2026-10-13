@@ -188,7 +188,6 @@ def state(session_id: str) -> dict[str, Any]:
     "outcome": outcome,
     "reason": reason,
     "intake": session["intake"],
-    "early_nstp": early,
     "member_results": session["member_results"],
     "active_member_id": session.get("active_member_id"),
     "active_member": active_member(session),
@@ -326,7 +325,7 @@ def submit_answer(session_id: str, request: AnswerRequest) -> dict[str, Any]:
     member_intake = session["intake"] | {"members": [member]}
     outcome, reason = decision(session["answers"], member_intake)
     session["member_results"][session["active_member_id"]] = {"outcome": outcome, "reason": reason}
-    session["messages"].append({"role": "assistant", "member_id": session["active_member_id"], "content": f"{active_member(session)['name']} result: {outcome}. Reason: {reason}"})
+    session["messages"].append({"role": "assistant", "member_id": session["active_member_id"], "content": f"Health questions for {active_member(session)['name']} are complete."})
   persist_session(session)
   return state(session_id)
 
