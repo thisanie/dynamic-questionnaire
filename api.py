@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import secrets
 import json
+import errno
+import os
 from pathlib import Path
 from datetime import date
 from typing import Any
@@ -17,7 +19,12 @@ from questionnaire_engine import Questionnaire, QuestionnaireError
 ROOT = Path(__file__).parent
 questionnaire = Questionnaire.from_file(ROOT / "questionnaire.json")
 plans = json.loads((ROOT / "plans.json").read_text(encoding="utf-8"))
-INTAKES_PATH = ROOT / "intakes.json"
+INTAKES_PATH = Path(
+  os.environ.get(
+    "INTAKES_PATH",
+    "/tmp/intakes.json" if os.environ.get("VERCEL") else str(ROOT / "intakes.json"),
+  )
+)
 app = FastAPI(title="Health questionnaire API", version="1.0.0")
 sessions: dict[str, dict[str, Any]] = {}
 
@@ -117,6 +124,17 @@ def decision(answers: dict[str, Any], intake: dict[str, Any]) -> tuple[str, str]
   return decide(answers, intake)
 
 
+def write_intakes(records: list[dict[str, Any]]) -> None:
+  global INTAKES_PATH
+  try:
+    INTAKES_PATH.write_text(json.dumps(records, indent=2) + "\n", encoding="utf-8")
+  except OSError as exc:
+    if exc.errno != errno.EROFS or INTAKES_PATH == Path("/tmp/intakes.json"):
+      raise
+    INTAKES_PATH = Path("/tmp/intakes.json")
+    INTAKES_PATH.write_text(json.dumps(records, indent=2) + "\n", encoding="utf-8")
+
+
 def persist_session(session: dict[str, Any]) -> None:
   if not INTAKES_PATH.exists():
     return
@@ -127,7 +145,7 @@ def persist_session(session: dict[str, Any]) -> None:
       record["member_answers"] = session["member_answers"]
       record["member_results"] = session.get("member_results", {})
       break
-  INTAKES_PATH.write_text(json.dumps(records, indent=2) + "\n", encoding="utf-8")
+  write_intakes(records)
 
 
 def state(session_id: str) -> dict[str, Any]:
@@ -226,7 +244,7 @@ def save_intake(intake: IntakeRequest) -> dict[str, Any]:
     existing = json.loads(INTAKES_PATH.read_text(encoding="utf-8"))
   record["intake_id"] = secrets.token_urlsafe(12)
   existing.append(record)
-  INTAKES_PATH.write_text(json.dumps(existing, indent=2) + "\n", encoding="utf-8")
+  write_intakes(existing)
   return record
 
 
