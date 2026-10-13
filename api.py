@@ -12,7 +12,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field, field_validator, model_validator
 
-from decision_engine import decide, early_nstp
+from decision_engine import decide, decision_evidence, early_nstp
 from questionnaire_engine import Questionnaire, QuestionnaireError
 
 
@@ -178,10 +178,15 @@ def state(session_id: str) -> dict[str, Any]:
       session["member_results"][member_id] = {
         "outcome": "NSTP",
         "reason": session["member_stopped"][member_id],
+        "evidence": decision_evidence(session["member_answers"].get(member_id, {}), member_intake),
       }
     else:
       outcome_value, reason_value = decision(session["member_answers"][member_id], member_intake)
-      session["member_results"][member_id] = {"outcome": outcome_value, "reason": reason_value}
+      session["member_results"][member_id] = {
+        "outcome": outcome_value,
+        "reason": reason_value,
+        "evidence": decision_evidence(session["member_answers"][member_id], member_intake),
+      }
   if session["stopped"]:
     outcome, reason = "NSTP", session["stop_reason"]
   elif question is None and session.get("active_member_id") and all_members_complete:
@@ -342,7 +347,12 @@ def submit_answer(session_id: str, request: AnswerRequest) -> dict[str, Any]:
     member = active_member(session)
     member_intake = session["intake"] | {"members": [member]}
     outcome, reason = decision(session["answers"], member_intake)
-    session["member_results"][session["active_member_id"]] = {"outcome": outcome, "reason": reason}
+    member_intake = session["intake"] | {"members": [member]}
+    session["member_results"][session["active_member_id"]] = {
+      "outcome": outcome,
+      "reason": reason,
+      "evidence": decision_evidence(session["answers"], member_intake),
+    }
     session["messages"].append({"role": "assistant", "member_id": session["active_member_id"], "content": f"Health questions for {active_member(session)['name']} are complete."})
   persist_session(session)
   return state(session_id)

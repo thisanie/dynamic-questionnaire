@@ -719,5 +719,384 @@
         "reason": "No diabetes or hypertension STP rule was applicable."
       }
     }
+  },
+  {
+    "product": "My Health Care 1",
+    "sum_assured": 1000000.0,
+    "tenure": 2,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2028-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "a",
+        "gender": "Female",
+        "dob": "1968-01-01",
+        "member_id": "yG351QrOeH0",
+        "age": 58
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "jNWYY8K0-PEZuZhj",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Welcome. I will guide you through a short health questionnaire."
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Now answering for a (Self)."
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Diabetes, Hypertension"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What type of diabetes do you have?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Type 2"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What was your age at diagnosis of diabetes?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "29"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What treatment are you currently taking for diabetes?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Oral medicines + Insulin"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Are you currently taking insulin?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Yes"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What is your latest HbA1c value (%)?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "11.0"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Was your latest HbA1c test done within the last 90 days?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Yes"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Do you have any diabetes-related complications?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Diabetic Foot"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Have you been hospitalized because of diabetes in the last 5 years?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Have you had any heart, kidney, brain, or retina problem related to diabetes for which special investigation or treatment was advised?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Which PED waiting period did you choose?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Default"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What was your age at diagnosis of hypertension?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "40"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "How many medicines are you currently taking for hypertension?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "3"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What is your latest systolic blood pressure reading?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "120"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What is your latest diastolic blood pressure reading?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "120"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Was your latest blood pressure reading taken within the last 90 days?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Yes"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Do you have any hypertension-related complications?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Heart Disease"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Have you had any hospitalization related to hypertension?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Have you had any heart, kidney, brain, or retina problem related to hypertension for which special investigation or treatment was advised?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Which PED waiting period did you choose?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Default"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Have you ever been hospitalized for more than 24 hours?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Have you ever had any abnormal findings in medical investigations?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What is your tobacco consumption status?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Never"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "What is your alcohol consumption status?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "Never"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Are you currently taking any medicines?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Do your parents or siblings have any of these conditions diagnosed before age 60?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "None"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Are you currently awaiting any investigation result, specialist consultation, surgery, or hospitalization?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "During the last 12 months, have you experienced symptoms lasting more than 14 days that have not yet been medically evaluated?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Apart from the declarations above, are you completely healthy and free from any medical condition?"
+      },
+      {
+        "role": "user",
+        "member_id": "yG351QrOeH0",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "yG351QrOeH0",
+        "content": "Health questions for a are complete."
+      }
+    ],
+    "member_answers": {
+      "yG351QrOeH0": {
+        "general_health": [
+          "Diabetes",
+          "Hypertension"
+        ],
+        "diabetes_type": "Type 2",
+        "diabetes_age": 29,
+        "diabetes_treatment": "Oral medicines + Insulin",
+        "diabetes_insulin": true,
+        "hba1c": 11.0,
+        "hba1c_within_90_days": true,
+        "diabetes_complications": [
+          "Diabetic Foot"
+        ],
+        "diabetes_hospitalization": false,
+        "diabetes_special_investigation": false,
+        "diabetes_waiting_period": "Default",
+        "hypertension_age": 40,
+        "hypertension_medicines": "3",
+        "systolic_bp": 120,
+        "diastolic_bp": 120,
+        "bp_within_90_days": true,
+        "hypertension_complications": [
+          "Heart Disease"
+        ],
+        "hypertension_hospitalization": false,
+        "hypertension_special_investigation": false,
+        "hypertension_waiting_period": "Default",
+        "hospitalized_24h": false,
+        "abnormal_investigation": false,
+        "tobacco_use": "Never",
+        "alcohol_use": "Never",
+        "current_medication": false,
+        "family_history": [
+          "None"
+        ],
+        "awaiting_care": false,
+        "unassessed_symptoms": false,
+        "completely_healthy": false
+      }
+    },
+    "member_results": {
+      "yG351QrOeH0": {
+        "outcome": "NSTP",
+        "reason": "More than one supported PED was selected.",
+        "evidence": [
+          {
+            "question_id": "general_health",
+            "answer": [
+              "Diabetes",
+              "Hypertension"
+            ],
+            "impact": "More than one supported PED selected, causing NSTP.",
+            "triggered": true
+          }
+        ]
+      }
+    }
   }
 ]
