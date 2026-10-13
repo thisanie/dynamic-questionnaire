@@ -36,9 +36,14 @@ class Questionnaire:
       for field, expected in condition.items()
     )
 
-  def next_question(self, answers: dict[str, Any]) -> dict[str, Any] | None:
+  def next_question(
+    self,
+    answers: dict[str, Any],
+    skipped_ids: set[str] | None = None,
+  ) -> dict[str, Any] | None:
+    skipped_ids = skipped_ids or set()
     for question in self.questions:
-      if question["id"] not in answers and self.is_visible(question, answers):
+      if question["id"] not in answers and question["id"] not in skipped_ids and self.is_visible(question, answers):
         return question
     return None
 

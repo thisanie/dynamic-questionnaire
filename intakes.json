@@ -1,0 +1,466 @@
+[
+  {
+    "product": "Health Guard",
+    "sum_assured": 1000000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "Aniket Surjuse",
+        "gender": "Male",
+        "dob": "2000-08-02",
+        "age": 26
+      }
+    ],
+    "intake_id": "xtvh3s5QZnZ8b5n1"
+  },
+  {
+    "product": "My Health Care 1",
+    "sum_assured": 1000000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "Aniket Surjuse",
+        "gender": "Male",
+        "dob": "2000-08-02",
+        "age": 26
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "j0I2zsiXpApO_cNt"
+  },
+  {
+    "product": "Health Guard",
+    "sum_assured": 100000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "Aniket",
+        "gender": "Male",
+        "dob": "2000-08-02",
+        "age": 26
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "hjR5gty8e1OFbsIn"
+  },
+  {
+    "product": "My Health Care 1",
+    "sum_assured": 1000000.0,
+    "tenure": 2,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2028-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "test",
+        "gender": "Male",
+        "dob": "2000-08-02",
+        "age": 26
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "PMSM7nlgfHLZ9Pyf"
+  },
+  {
+    "product": "Health Guard",
+    "sum_assured": 1000000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "user 1",
+        "gender": "Male",
+        "dob": "2000-08-02",
+        "age": 26
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "do-WdQTv_BzArc41"
+  },
+  {
+    "product": "My Health Care 1",
+    "sum_assured": 1000000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "Aniket",
+        "gender": "Male",
+        "dob": "2000-08-02",
+        "member_id": "yt85Mcie7cE",
+        "age": 26
+      },
+      {
+        "relation": "Spouse",
+        "name": "dummy",
+        "gender": "Female",
+        "dob": "2002-08-02",
+        "member_id": "8s0z7-GG7cM",
+        "age": 24
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "LnRGaprDmQ6I8tnY"
+  },
+  {
+    "product": "Health Guard",
+    "sum_assured": 1000000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "x",
+        "gender": "Male",
+        "dob": "2001-01-01",
+        "member_id": "U6NixY2AN8Y",
+        "age": 25
+      },
+      {
+        "relation": "Parent",
+        "name": "y",
+        "gender": "Female",
+        "dob": "1975-01-01",
+        "member_id": "ugMdMMOOoio",
+        "age": 51
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "Muo_z3G7Wj4MzVpZ",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Welcome. I will guide you through a short health questionnaire."
+      },
+      {
+        "role": "assistant",
+        "member_id": "U6NixY2AN8Y",
+        "content": "Now answering for x (Self)."
+      },
+      {
+        "role": "user",
+        "member_id": "U6NixY2AN8Y",
+        "content": "Diabetes, Hypertension"
+      },
+      {
+        "role": "assistant",
+        "member_id": "U6NixY2AN8Y",
+        "content": "What type of diabetes do you have?"
+      },
+      {
+        "role": "user",
+        "member_id": "U6NixY2AN8Y",
+        "content": "Type 1"
+      },
+      {
+        "role": "assistant",
+        "member_id": "U6NixY2AN8Y",
+        "content": "What was your age at diagnosis of diabetes?"
+      },
+      {
+        "role": "assistant",
+        "member_id": "U6NixY2AN8Y",
+        "content": "x was classified as NSTP for Diabetes. Diabetes type does not meet the STP criteria."
+      },
+      {
+        "role": "assistant",
+        "member_id": "ugMdMMOOoio",
+        "content": "Now answering for y (Parent)."
+      },
+      {
+        "role": "user",
+        "member_id": "ugMdMMOOoio",
+        "content": "Diabetes"
+      },
+      {
+        "role": "assistant",
+        "member_id": "ugMdMMOOoio",
+        "content": "What type of diabetes do you have?"
+      },
+      {
+        "role": "user",
+        "member_id": "ugMdMMOOoio",
+        "content": "Type 2"
+      },
+      {
+        "role": "assistant",
+        "member_id": "ugMdMMOOoio",
+        "content": "What was your age at diagnosis of diabetes?"
+      },
+      {
+        "role": "user",
+        "member_id": "ugMdMMOOoio",
+        "content": "40"
+      },
+      {
+        "role": "assistant",
+        "member_id": "ugMdMMOOoio",
+        "content": "What treatment are you currently taking for diabetes?"
+      },
+      {
+        "role": "user",
+        "member_id": "ugMdMMOOoio",
+        "content": "Oral medicines"
+      },
+      {
+        "role": "assistant",
+        "member_id": "ugMdMMOOoio",
+        "content": "Are you currently taking insulin?"
+      },
+      {
+        "role": "user",
+        "member_id": "ugMdMMOOoio",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "ugMdMMOOoio",
+        "content": "What is your latest HbA1c value (%)?"
+      },
+      {
+        "role": "user",
+        "member_id": "ugMdMMOOoio",
+        "content": "11.0"
+      },
+      {
+        "role": "assistant",
+        "member_id": "ugMdMMOOoio",
+        "content": "Was your latest HbA1c test done within the last 90 days?"
+      },
+      {
+        "role": "assistant",
+        "member_id": "ugMdMMOOoio",
+        "content": "y was classified as NSTP for Diabetes. HbA1c does not meet the STP criteria."
+      }
+    ],
+    "member_answers": {
+      "U6NixY2AN8Y": {
+        "general_health": [
+          "Diabetes",
+          "Hypertension"
+        ],
+        "diabetes_type": "Type 1"
+      },
+      "ugMdMMOOoio": {
+        "general_health": [
+          "Diabetes"
+        ],
+        "diabetes_type": "Type 2",
+        "diabetes_age": 40,
+        "diabetes_treatment": "Oral medicines",
+        "diabetes_insulin": false,
+        "hba1c": 11.0
+      }
+    },
+    "member_results": {
+      "U6NixY2AN8Y": {
+        "outcome": "NSTP",
+        "reason": "x was classified as NSTP for Diabetes. Diabetes type does not meet the STP criteria."
+      },
+      "ugMdMMOOoio": {
+        "outcome": "NSTP",
+        "reason": "y was classified as NSTP for Diabetes. HbA1c does not meet the STP criteria."
+      }
+    }
+  },
+  {
+    "product": "My Health Care 1",
+    "sum_assured": 1000000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Sibling",
+        "name": "qnnhikrt",
+        "gender": "Male",
+        "dob": "1990-01-01",
+        "member_id": "oJjUunOub-Q",
+        "age": 36
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "2PkLoZ4kpCMX26_E",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Welcome. I will guide you through a short health questionnaire."
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "Now answering for qnnhikrt (Sibling)."
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "Diabetes"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "What type of diabetes do you have?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "Type 2"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "What was your age at diagnosis of diabetes?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "30"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "What treatment are you currently taking for diabetes?"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "Continuing with the remaining questions for qnnhikrt. Diabetes questions have been skipped."
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "Have you ever been hospitalized for more than 24 hours?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "Have you ever had any abnormal findings in medical investigations?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "What is your tobacco consumption status?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "Never"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "What is your alcohol consumption status?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "Never"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "Are you currently taking any medicines?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "Do your parents or siblings have any of these conditions diagnosed before age 60?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "None"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "Are you currently awaiting any investigation result, specialist consultation, surgery, or hospitalization?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "During the last 12 months, have you experienced symptoms lasting more than 14 days that have not yet been medically evaluated?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "Apart from the declarations above, are you completely healthy and free from any medical condition?"
+      },
+      {
+        "role": "user",
+        "member_id": "oJjUunOub-Q",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "oJjUunOub-Q",
+        "content": "qnnhikrt result: NSTP. Reason: The declared diabetes condition did not meet every STP criterion."
+      }
+    ],
+    "member_answers": {
+      "oJjUunOub-Q": {
+        "general_health": [
+          "Diabetes"
+        ],
+        "diabetes_type": "Type 2",
+        "diabetes_age": 30,
+        "hospitalized_24h": false,
+        "abnormal_investigation": false,
+        "tobacco_use": "Never",
+        "alcohol_use": "Never",
+        "current_medication": false,
+        "family_history": [
+          "None"
+        ],
+        "awaiting_care": false,
+        "unassessed_symptoms": false,
+        "completely_healthy": false
+      }
+    },
+    "member_results": {
+      "oJjUunOub-Q": {
+        "outcome": "NSTP",
+        "reason": "The declared diabetes condition did not meet every STP criterion."
+      }
+    }
+  }
+]

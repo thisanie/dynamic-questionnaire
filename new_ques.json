@@ -1,0 +1,9 @@
+{
+    "general_health":[
+        {"question": "do have diabetes?",
+        "type": "boolean",
+        "required": true
+        
+        }
+    ]
+}

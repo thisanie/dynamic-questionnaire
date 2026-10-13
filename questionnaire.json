@@ -1,18 +1,12 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "startNode": "general_health",
-  "outcomes": [
-    "STP",
-    "REFER",
-    "MANUAL_UW",
-    "NSTP",
-    "REJECT"
-  ],
+  "outcomes": ["STP", "REFER", "MANUAL_UW", "NSTP", "REJECT"],
   "questions": [
     {
       "id": "general_health",
       "type": "multiselect",
-      "text": "Have you ever been diagnosed, treated, investigated, hospitalized, operated upon, or taken medication for any of the following conditions?",
+      "text": "Have you ever been diagnosed, treated, investigated, advised treatment, hospitalized, operated upon, or taken medication for any medical condition? Select all that apply.",
       "options": [
         "Diabetes",
         "Hypertension",
@@ -31,200 +25,217 @@
         "None"
       ]
     },
-
     {
       "id": "diabetes_type",
       "type": "select",
       "text": "What type of diabetes do you have?",
-      "visibleWhen": {
-        "general_health": "Diabetes"
-      },
-      "options": [
-        "Type 1",
-        "Type 2",
-        "Gestational"
-      ]
+      "visibleWhen": { "general_health": "Diabetes" },
+      "options": ["Type 1", "Type 2", "Gestational"]
     },
     {
       "id": "diabetes_age",
       "type": "number",
-      "text": "At what age were you diagnosed with diabetes?",
-      "visibleWhen": {
-        "general_health": "Diabetes"
-      }
+      "text": "What was your age at diagnosis of diabetes?",
+      "visibleWhen": { "general_health": "Diabetes" }
     },
     {
       "id": "diabetes_treatment",
-      "type": "text",
-      "text": "What treatment are you currently taking?",
-      "visibleWhen": {
-        "general_health": "Diabetes"
-      }
+      "type": "select",
+      "text": "What treatment are you currently taking for diabetes?",
+      "visibleWhen": { "general_health": "Diabetes" },
+      "options": [
+        "Diet control only",
+        "Oral medicines",
+        "Insulin",
+        "Oral medicines + Insulin"
+      ]
+    },
+    {
+      "id": "diabetes_insulin",
+      "type": "boolean",
+      "text": "Are you currently taking insulin?",
+      "visibleWhen": { "general_health": "Diabetes" }
     },
     {
       "id": "hba1c",
       "type": "decimal",
-      "text": "What is your latest HbA1c value?",
-      "visibleWhen": {
-        "general_health": "Diabetes"
-      }
+      "text": "What is your latest HbA1c value (%)?",
+      "visibleWhen": { "general_health": "Diabetes" }
     },
     {
-      "id": "hba1c_date",
-      "type": "date",
-      "text": "When was the HbA1c test done?",
-      "visibleWhen": {
-        "general_health": "Diabetes"
-      }
+      "id": "hba1c_within_90_days",
+      "type": "boolean",
+      "text": "Was your latest HbA1c test done within the last 90 days?",
+      "visibleWhen": { "general_health": "Diabetes" }
     },
     {
       "id": "diabetes_complications",
-      "type": "boolean",
-      "text": "Any diabetic complications?",
-      "visibleWhen": {
-        "general_health": "Diabetes"
-      }
+      "type": "multiselect",
+      "text": "Do you have any diabetes-related complications?",
+      "visibleWhen": { "general_health": "Diabetes" },
+      "options": [
+        "No",
+        "Retinopathy",
+        "Neuropathy",
+        "Nephropathy",
+        "Heart Disease",
+        "Diabetic Foot"
+      ]
     },
     {
       "id": "diabetes_hospitalization",
       "type": "boolean",
-      "text": "Hospitalized due to diabetes in the last 5 years?",
-      "visibleWhen": {
-        "general_health": "Diabetes"
-      }
-    },
-
-    {
-      "id": "htn_age",
-      "type": "number",
-      "text": "At what age were you diagnosed with hypertension?",
-      "visibleWhen": {
-        "general_health": "Hypertension"
-      }
+      "text": "Have you been hospitalized because of diabetes in the last 5 years?",
+      "visibleWhen": { "general_health": "Diabetes" }
     },
     {
-      "id": "htn_medicines",
+      "id": "diabetes_special_investigation",
+      "type": "boolean",
+      "text": "Have you had any heart, kidney, brain, or retina problem related to diabetes for which special investigation or treatment was advised?",
+      "visibleWhen": { "general_health": "Diabetes" }
+    },
+    {
+      "id": "diabetes_waiting_period",
+      "type": "select",
+      "text": "Which PED waiting period did you choose?",
+      "visibleWhen": { "general_health": "Diabetes" },
+      "options": ["Default", "Other"]
+    },
+    {
+      "id": "hypertension_age",
       "type": "number",
-      "text": "How many medicines are you taking for hypertension?",
-      "visibleWhen": {
-        "general_health": "Hypertension"
-      }
+      "text": "What was your age at diagnosis of hypertension?",
+      "visibleWhen": { "general_health": "Hypertension" }
+    },
+    {
+      "id": "hypertension_medicines",
+      "type": "select",
+      "text": "How many medicines are you currently taking for hypertension?",
+      "visibleWhen": { "general_health": "Hypertension" },
+      "options": ["0", "1", "2", "3", "More than 3"]
     },
     {
       "id": "systolic_bp",
       "type": "number",
-      "text": "Latest systolic blood pressure reading",
-      "visibleWhen": {
-        "general_health": "Hypertension"
-      }
+      "text": "What is your latest systolic blood pressure reading?",
+      "visibleWhen": { "general_health": "Hypertension" }
     },
     {
       "id": "diastolic_bp",
       "type": "number",
-      "text": "Latest diastolic blood pressure reading",
-      "visibleWhen": {
-        "general_health": "Hypertension"
-      }
+      "text": "What is your latest diastolic blood pressure reading?",
+      "visibleWhen": { "general_health": "Hypertension" }
     },
     {
-      "id": "bp_date",
-      "type": "date",
-      "text": "When was this BP measured?",
-      "visibleWhen": {
-        "general_health": "Hypertension"
-      }
-    },
-    {
-      "id": "htn_complications",
+      "id": "bp_within_90_days",
       "type": "boolean",
-      "text": "Any hypertension-related complications?",
-      "visibleWhen": {
-        "general_health": "Hypertension"
-      }
+      "text": "Was your latest blood pressure reading taken within the last 90 days?",
+      "visibleWhen": { "general_health": "Hypertension" }
     },
-
+    {
+      "id": "hypertension_complications",
+      "type": "multiselect",
+      "text": "Do you have any hypertension-related complications?",
+      "visibleWhen": { "general_health": "Hypertension" },
+      "options": [
+        "None",
+        "Heart Disease",
+        "Stroke",
+        "Kidney Disease",
+        "Eye Disease"
+      ]
+    },
+    {
+      "id": "hypertension_hospitalization",
+      "type": "boolean",
+      "text": "Have you had any hospitalization related to hypertension?",
+      "visibleWhen": { "general_health": "Hypertension" }
+    },
+    {
+      "id": "hypertension_special_investigation",
+      "type": "boolean",
+      "text": "Have you had any heart, kidney, brain, or retina problem related to hypertension for which special investigation or treatment was advised?",
+      "visibleWhen": { "general_health": "Hypertension" }
+    },
+    {
+      "id": "hypertension_waiting_period",
+      "type": "select",
+      "text": "Which PED waiting period did you choose?",
+      "visibleWhen": { "general_health": "Hypertension" },
+      "options": ["Default", "Other"]
+    },
     {
       "id": "heart_condition",
-      "type": "text",
-      "text": "Specify heart condition",
-      "visibleWhen": {
-        "general_health": "Heart Disease"
-      }
+      "type": "multiselect",
+      "text": "Which heart condition or procedure applies to you?",
+      "visibleWhen": { "general_health": "Heart Disease" },
+      "options": [
+        "Angina",
+        "Heart Attack",
+        "Angioplasty",
+        "Bypass Surgery",
+        "Valve Disease",
+        "Arrhythmia",
+        "Other"
+      ]
     },
     {
       "id": "heart_diagnosis_date",
       "type": "date",
-      "text": "Diagnosis or procedure date",
-      "visibleWhen": {
-        "general_health": "Heart Disease"
-      }
+      "text": "What is the date of the heart diagnosis or procedure?",
+      "visibleWhen": { "general_health": "Heart Disease" }
     },
     {
       "id": "heart_symptom_free",
       "type": "boolean",
-      "text": "Are you symptom-free currently?",
-      "visibleWhen": {
-        "general_health": "Heart Disease"
-      }
+      "text": "Are you currently symptom-free?",
+      "visibleWhen": { "general_health": "Heart Disease" }
     },
     {
-      "id": "heart_recent_hospitalization",
+      "id": "heart_hospitalization",
       "type": "boolean",
-      "text": "Hospitalized in the last 2 years?",
-      "visibleWhen": {
-        "general_health": "Heart Disease"
-      }
+      "text": "Have you had any hospitalization for a heart condition in the last 2 years?",
+      "visibleWhen": { "general_health": "Heart Disease" }
     },
-
     {
       "id": "fracture_bone",
       "type": "text",
       "text": "Which bone was fractured?",
-      "visibleWhen": {
-        "general_health": "Fracture/Injury"
-      }
+      "visibleWhen": { "general_health": "Fracture/Injury" }
     },
     {
       "id": "fracture_cause",
-      "type": "text",
-      "text": "Cause of fracture?",
-      "visibleWhen": {
-        "general_health": "Fracture/Injury"
-      }
+      "type": "select",
+      "text": "What caused the fracture?",
+      "visibleWhen": { "general_health": "Fracture/Injury" },
+      "options": ["Accident", "Sports Injury", "Fall", "Osteoporosis", "Other"]
     },
     {
       "id": "fracture_treatment",
-      "type": "text",
-      "text": "Treatment received",
-      "visibleWhen": {
-        "general_health": "Fracture/Injury"
-      }
+      "type": "select",
+      "text": "What treatment did you receive for the fracture?",
+      "visibleWhen": { "general_health": "Fracture/Injury" },
+      "options": ["Conservative", "Surgery"]
     },
     {
-      "id": "fracture_recovered",
-      "type": "boolean",
-      "text": "Have you completely recovered?",
-      "visibleWhen": {
-        "general_health": "Fracture/Injury"
-      }
+      "id": "fracture_status",
+      "type": "select",
+      "text": "What is your current status?",
+      "visibleWhen": { "general_health": "Fracture/Injury" },
+      "options": ["Completely recovered", "Under treatment"]
     },
     {
       "id": "fracture_disability",
       "type": "boolean",
-      "text": "Any permanent disability?",
-      "visibleWhen": {
-        "general_health": "Fracture/Injury"
-      }
+      "text": "Do you have any permanent disability from the fracture?",
+      "visibleWhen": { "general_health": "Fracture/Injury" }
     },
     {
       "id": "fracture_implant",
       "type": "boolean",
-      "text": "Any implant still present?",
-      "visibleWhen": {
-        "general_health": "Fracture/Injury"
-      }
+      "text": "Is any implant currently present?",
+      "visibleWhen": { "general_health": "Fracture/Injury" }
     },
-
     {
       "id": "hospitalized_24h",
       "type": "boolean",
@@ -233,97 +244,117 @@
     {
       "id": "hospital_reason",
       "type": "text",
-      "text": "Reason for hospitalization",
-      "visibleWhen": {
-        "hospitalized_24h": true
-      }
+      "text": "What was the reason for hospitalization?",
+      "visibleWhen": { "hospitalized_24h": true }
     },
     {
       "id": "hospital_admission_date",
       "type": "date",
-      "text": "Admission date",
-      "visibleWhen": {
-        "hospitalized_24h": true
-      }
+      "text": "What was the date of admission?",
+      "visibleWhen": { "hospitalized_24h": true }
     },
     {
       "id": "hospital_discharge_date",
       "type": "date",
-      "text": "Discharge date",
-      "visibleWhen": {
-        "hospitalized_24h": true
-      }
+      "text": "What was the date of discharge?",
+      "visibleWhen": { "hospitalized_24h": true }
     },
     {
       "id": "hospital_surgery",
       "type": "boolean",
-      "text": "Was surgery performed?",
-      "visibleWhen": {
-        "hospitalized_24h": true
-      }
+      "text": "Was surgery performed during the hospitalization?",
+      "visibleWhen": { "hospitalized_24h": true }
     },
     {
       "id": "hospital_recovered",
       "type": "boolean",
-      "text": "Completely recovered?",
-      "visibleWhen": {
-        "hospitalized_24h": true
-      }
+      "text": "Are you completely recovered?",
+      "visibleWhen": { "hospitalized_24h": true }
     },
-
+    {
+      "id": "hospital_treatment",
+      "type": "boolean",
+      "text": "Is any treatment currently ongoing?",
+      "visibleWhen": { "hospitalized_24h": true }
+    },
     {
       "id": "abnormal_investigation",
       "type": "boolean",
-      "text": "Any abnormal medical investigation findings?"
+      "text": "Have you ever had any abnormal findings in medical investigations?"
     },
     {
       "id": "investigation_type",
       "type": "text",
-      "text": "Investigation type",
-      "visibleWhen": {
-        "abnormal_investigation": true
-      }
+      "text": "What type of investigation produced the abnormal finding?",
+      "visibleWhen": { "abnormal_investigation": true }
     },
     {
       "id": "investigation_diagnosis",
       "type": "text",
-      "text": "Final diagnosis",
-      "visibleWhen": {
-        "abnormal_investigation": true
-      }
+      "text": "What was the final diagnosis?",
+      "visibleWhen": { "abnormal_investigation": true }
     },
     {
       "id": "investigation_treatment",
-      "type": "text",
-      "text": "Treatment advised",
-      "visibleWhen": {
-        "abnormal_investigation": true
-      }
+      "type": "boolean",
+      "text": "Was treatment advised?",
+      "visibleWhen": { "abnormal_investigation": true }
     },
-
+    {
+      "id": "investigation_status",
+      "type": "select",
+      "text": "What is the current status?",
+      "visibleWhen": { "abnormal_investigation": true },
+      "options": ["Resolved", "Stable", "Under treatment"]
+    },
     {
       "id": "tobacco_use",
       "type": "select",
-      "text": "Do you consume tobacco?",
-      "options": [
-        "Never",
-        "Former User",
-        "Current User"
-      ]
+      "text": "What is your tobacco consumption status?",
+      "options": ["Never", "Former User", "Current User"]
     },
-
+    {
+      "id": "tobacco_type",
+      "type": "text",
+      "text": "What type of tobacco do you use?",
+      "visibleWhen": { "tobacco_use": "Current User" }
+    },
+    {
+      "id": "tobacco_quantity",
+      "type": "number",
+      "text": "How many tobacco products do you consume per day?",
+      "visibleWhen": { "tobacco_use": "Current User" }
+    },
+    {
+      "id": "tobacco_duration",
+      "type": "number",
+      "text": "For how many years have you used tobacco?",
+      "visibleWhen": { "tobacco_use": "Current User" }
+    },
     {
       "id": "alcohol_use",
       "type": "select",
-      "text": "Alcohol consumption",
-      "options": [
-        "Never",
-        "Occasional",
-        "Weekly",
-        "Daily"
-      ]
+      "text": "What is your alcohol consumption status?",
+      "options": ["Never", "Occasional", "Weekly", "Daily"]
     },
-
+    {
+      "id": "alcohol_drinks_per_week",
+      "type": "number",
+      "text": "What is your average number of drinks per week?",
+      "visibleWhen": { "alcohol_use": "Occasional" }
+    },
+    {
+      "id": "alcohol_weekly_drinks",
+      "type": "number",
+      "text": "What is your average number of drinks per week?",
+      "visibleWhen": { "alcohol_use": "Weekly" }
+    },
+    {
+      "id": "alcohol_daily_drinks",
+      "type": "number",
+      "text": "What is your average number of drinks per week?",
+      "visibleWhen": { "alcohol_use": "Daily" }
+    },
     {
       "id": "current_medication",
       "type": "boolean",
@@ -332,24 +363,25 @@
     {
       "id": "medicine_name",
       "type": "text",
-      "text": "Medicine name",
-      "visibleWhen": {
-        "current_medication": true
-      }
+      "text": "What is the name of the medicine?",
+      "visibleWhen": { "current_medication": true }
     },
     {
       "id": "medicine_condition",
       "type": "text",
-      "text": "Condition for which medicine is being taken",
-      "visibleWhen": {
-        "current_medication": true
-      }
+      "text": "What medical condition is the medicine for?",
+      "visibleWhen": { "current_medication": true }
     },
-
+    {
+      "id": "medicine_duration",
+      "type": "number",
+      "text": "For how many years have you taken the medicine?",
+      "visibleWhen": { "current_medication": true }
+    },
     {
       "id": "family_history",
       "type": "multiselect",
-      "text": "Family medical history",
+      "text": "Do your parents or siblings have any of these conditions diagnosed before age 60?",
       "options": [
         "Diabetes",
         "Heart Disease",
@@ -358,85 +390,95 @@
         "Kidney Disease",
         "None"
       ]
+    },
+    {
+      "id": "awaiting_care",
+      "type": "boolean",
+      "text": "Are you currently awaiting any investigation result, specialist consultation, surgery, or hospitalization?"
+    },
+    {
+      "id": "unassessed_symptoms",
+      "type": "boolean",
+      "text": "During the last 12 months, have you experienced symptoms lasting more than 14 days that have not yet been medically evaluated?"
+    },
+    {
+      "id": "completely_healthy",
+      "type": "boolean",
+      "text": "Apart from the declarations above, are you completely healthy and free from any medical condition?"
     }
   ],
-
   "rules": [
+    { "if": { "diabetes_type": "Type 1" }, "outcome": "REJECT" },
+    { "if": { "diabetes_type": "Type 2" }, "outcome": "REFER" },
+    { "if": { "diabetes_type": "Gestational" }, "outcome": "REFER" },
+    { "if": { "diabetes_age": { "lte": 30 } }, "outcome": "REJECT" },
+    { "if": { "diabetes_treatment": "Oral medicines" }, "outcome": "REFER" },
+    { "if": { "diabetes_treatment": "Insulin" }, "outcome": "REFER" },
     {
-      "if": {
-        "diabetes_type": "Type 1"
-      },
-      "outcome": "REJECT"
-    },
-    {
-      "if": {
-        "diabetes_age": {
-          "lte": 30
-        }
-      },
-      "outcome": "REJECT"
-    },
-    {
-      "if": {
-        "diabetes_complications": true
-      },
-      "outcome": "REJECT"
-    },
-    {
-      "if": {
-        "diabetes_hospitalization": true
-      },
-      "outcome": "MANUAL_UW"
-    },
-    {
-      "if": {
-        "htn_age": {
-          "lte": 30
-        }
-      },
-      "outcome": "REJECT"
-    },
-    {
-      "if": {
-        "systolic_bp": {
-          "gt": 160
-        }
-      },
+      "if": { "diabetes_treatment": "Oral medicines + Insulin" },
       "outcome": "REFER"
     },
+    { "if": { "diabetes_complications": "Retinopathy" }, "outcome": "REJECT" },
+    { "if": { "diabetes_complications": "Neuropathy" }, "outcome": "REJECT" },
+    { "if": { "diabetes_complications": "Nephropathy" }, "outcome": "REJECT" },
     {
-      "if": {
-        "diastolic_bp": {
-          "gt": 110
-        }
-      },
-      "outcome": "REFER"
+      "if": { "diabetes_complications": "Heart Disease" },
+      "outcome": "REJECT"
     },
     {
-      "if": {
-        "heart_condition": {
-          "exists": true
-        }
-      },
+      "if": { "diabetes_complications": "Diabetic Foot" },
+      "outcome": "REJECT"
+    },
+    { "if": { "diabetes_hospitalization": true }, "outcome": "MANUAL_UW" },
+    { "if": { "hypertension_age": { "lte": 30 } }, "outcome": "REJECT" },
+    {
+      "if": { "hypertension_medicines": "More than 3" },
+      "outcome": "MANUAL_UW"
+    },
+    { "if": { "systolic_bp": { "gt": 160 } }, "outcome": "REFER" },
+    { "if": { "diastolic_bp": { "gt": 110 } }, "outcome": "REFER" },
+    {
+      "if": { "hypertension_complications": "Heart Disease" },
       "outcome": "MANUAL_UW"
     },
     {
-      "if": {
-        "hospitalized_24h": true
-      },
+      "if": { "hypertension_complications": "Stroke" },
       "outcome": "MANUAL_UW"
     },
     {
-      "if": {
-        "abnormal_investigation": true
-      },
+      "if": { "hypertension_complications": "Kidney Disease" },
       "outcome": "MANUAL_UW"
     },
     {
-      "if": {
-        "current_medication": true
-      },
-      "outcome": "NSTP"
-    }
+      "if": { "hypertension_complications": "Eye Disease" },
+      "outcome": "MANUAL_UW"
+    },
+    { "if": { "hypertension_hospitalization": true }, "outcome": "MANUAL_UW" },
+    { "if": { "heart_condition": { "exists": true } }, "outcome": "MANUAL_UW" },
+    { "if": { "hospitalized_24h": true }, "outcome": "MANUAL_UW" },
+    { "if": { "abnormal_investigation": true }, "outcome": "MANUAL_UW" },
+    { "if": { "general_health": "Liver Disease" }, "outcome": "MANUAL_UW" },
+    { "if": { "general_health": "Kidney Disease" }, "outcome": "MANUAL_UW" },
+    {
+      "if": { "general_health": "Stroke/Neurological Disorder" },
+      "outcome": "MANUAL_UW"
+    },
+    { "if": { "general_health": "Cancer/Tumor" }, "outcome": "MANUAL_UW" },
+    { "if": { "general_health": "Blood Disorder" }, "outcome": "MANUAL_UW" },
+    {
+      "if": { "general_health": "Autoimmune Disorder" },
+      "outcome": "MANUAL_UW"
+    },
+    {
+      "if": { "general_health": "Mental Health Disorder" },
+      "outcome": "MANUAL_UW"
+    },
+    { "if": { "fracture_status": "Under treatment" }, "outcome": "MANUAL_UW" },
+    { "if": { "fracture_disability": true }, "outcome": "MANUAL_UW" },
+    { "if": { "fracture_implant": true }, "outcome": "MANUAL_UW" },
+    { "if": { "current_medication": true }, "outcome": "NSTP" },
+    { "if": { "awaiting_care": true }, "outcome": "MANUAL_UW" },
+    { "if": { "unassessed_symptoms": true }, "outcome": "MANUAL_UW" },
+    { "if": { "completely_healthy": false }, "outcome": "MANUAL_UW" }
   ]
 }
