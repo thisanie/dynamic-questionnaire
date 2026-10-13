@@ -490,11 +490,234 @@
         "role": "assistant",
         "member_id": "tkOXvJvG1Ys",
         "content": "Now answering for aniket (Self)."
+      },
+      {
+        "role": "user",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "None"
+      },
+      {
+        "role": "assistant",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "Have you ever been hospitalized for more than 24 hours?"
+      },
+      {
+        "role": "user",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "Have you ever had any abnormal findings in medical investigations?"
+      },
+      {
+        "role": "user",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "What is your tobacco consumption status?"
+      },
+      {
+        "role": "user",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "Never"
+      },
+      {
+        "role": "assistant",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "What is your alcohol consumption status?"
+      },
+      {
+        "role": "user",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "Never"
+      },
+      {
+        "role": "assistant",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "Are you currently taking any medicines?"
+      },
+      {
+        "role": "user",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "tkOXvJvG1Ys",
+        "content": "Do your parents or siblings have any of these conditions diagnosed before age 60?"
       }
     ],
     "member_answers": {
-      "tkOXvJvG1Ys": {}
+      "tkOXvJvG1Ys": {
+        "general_health": [
+          "None"
+        ],
+        "hospitalized_24h": false,
+        "abnormal_investigation": false,
+        "tobacco_use": "Never",
+        "alcohol_use": "Never",
+        "current_medication": false
+      }
     },
     "member_results": {}
+  },
+  {
+    "product": "My Health Care 1",
+    "sum_assured": 2000000.0,
+    "tenure": 1,
+    "proposed_start_date": "2026-10-13",
+    "expiry_date": "2027-10-13",
+    "members": [
+      {
+        "relation": "Self",
+        "name": "xyz",
+        "gender": "Male",
+        "dob": "2000-01-02",
+        "member_id": "aFgtaTc9DfQ",
+        "age": 26
+      }
+    ],
+    "created_at": "2026-10-13",
+    "intake_id": "ylHbgmhOTkY5oGjI",
+    "transcript": [
+      {
+        "role": "assistant",
+        "content": "Welcome. I will guide you through a short health questionnaire."
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Now answering for xyz (Self)."
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "None"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Have you ever been hospitalized for more than 24 hours?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Have you ever had any abnormal findings in medical investigations?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "What is your tobacco consumption status?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Never"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "What is your alcohol consumption status?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Never"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Are you currently taking any medicines?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Do your parents or siblings have any of these conditions diagnosed before age 60?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "None"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Are you currently awaiting any investigation result, specialist consultation, surgery, or hospitalization?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "During the last 12 months, have you experienced symptoms lasting more than 14 days that have not yet been medically evaluated?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "No"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Apart from the declarations above, are you completely healthy and free from any medical condition?"
+      },
+      {
+        "role": "user",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Yes"
+      },
+      {
+        "role": "assistant",
+        "member_id": "aFgtaTc9DfQ",
+        "content": "Health questions for xyz are complete."
+      }
+    ],
+    "member_answers": {
+      "aFgtaTc9DfQ": {
+        "general_health": [
+          "None"
+        ],
+        "hospitalized_24h": false,
+        "abnormal_investigation": false,
+        "tobacco_use": "Never",
+        "alcohol_use": "Never",
+        "current_medication": false,
+        "family_history": [
+          "None"
+        ],
+        "awaiting_care": false,
+        "unassessed_symptoms": false,
+        "completely_healthy": true
+      }
+    },
+    "member_results": {
+      "aFgtaTc9DfQ": {
+        "outcome": "STP",
+        "reason": "No diabetes or hypertension STP rule was applicable."
+      }
+    }
   }
 ]
